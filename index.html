@@ -99,6 +99,19 @@ p{margin:0 0 12px}
 .mapgrid figure{margin:0;display:flex;flex-direction:column;height:100%}
 .mapgrid .maps iframe{flex:1}
 
+.bars{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:16px 0 0}
+.bar{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;box-shadow:var(--shadow)}
+.bar.pick{border-color:var(--sun);box-shadow:0 0 0 3px var(--sun-lt),var(--shadow)}
+.bar .tag{display:inline-block;font:700 11px/1.7 -apple-system,sans-serif;padding:2px 10px;border-radius:999px;background:var(--sun-lt);color:#B23F12;margin:0 0 8px}
+.bar.pick .tag{background:var(--sun);color:#fff}
+.bar h3{margin:0 0 8px;font-size:16.5px}
+.bar .meta{font-size:13px;color:var(--ink-2);margin:0 0 4px}
+.bar .meta b{color:var(--ink)}
+.bar .addr{font-size:12.5px;color:var(--ink-3);margin:0 0 12px}
+.bar .book{display:inline-block;font:700 13px/1 -apple-system,sans-serif;color:#fff;background:var(--sun);
+  padding:9px 16px;border-radius:999px;text-decoration:none;transition:transform .12s cubic-bezier(.34,1.56,.64,1),box-shadow .12s ease}
+.bar .book:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(242,71,139,.28)}
+
 .spotifys{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0 0}
 .spotifys iframe{width:100%;height:152px;border:0;border-radius:12px}
 
@@ -111,6 +124,7 @@ p{margin:0 0 12px}
 @media (max-width:820px){
   .mapgrid{grid-template-columns:1fr}
   .spotifys{grid-template-columns:1fr}
+  .bars{grid-template-columns:1fr}
 }
 
 footer{padding:32px 0 48px;color:var(--ink-3);font-size:12.5px;text-align:center}
@@ -257,7 +271,49 @@ footer a{color:var(--sea)}
     <div class="fact"><dt>シャトル最終</dt><dd>会場発 21:30<small>勝田駅行き・混雑するので早めが無難</small></dd></div>
     <div class="fact"><dt>常磐線</dt><dd>勝田→東京 最終時刻は当日要確認<small>乗換案内アプリで</small></dd></div>
   </div>
-  <p class="warn" style="margin-top:16px"><b>🍺 帰りに一杯：屋台屋 博多劇場</b><br>東京駅そば店（大手町駅B5出口 徒歩2分／東京駅 徒歩6分）— 特急ひたちが東京駅直通なので着いてそのまま歩けます。上野で途中下車するなら<a href="https://hakatagekijo.com/uenohirokoji/" style="color:#7A5600">上野広小路店</a>（徒歩2分）も。詳細・予約は<a href="https://hakatagekijo.com/shoplist/" style="color:#7A5600">公式店舗一覧</a>で。</p>
+
+  <h2 style="margin-top:44px">帰りに一杯（勝田駅そば）</h2>
+  <p style="font-size:14px;color:var(--ink-2);margin:0 0 4px">シャトルで勝田駅まで戻れば、駅前に居酒屋が固まっています。最終シャトル21:30に乗っても22時前には着くので、下の4軒はどれも間に合います。</p>
+
+  <div class="bars">
+    <div class="bar pick">
+      <span class="tag">イチオシ</span>
+      <h3>常陸之國 もんどころ 勝田駅東口店</h3>
+      <p class="meta">東口 <b>徒歩2分</b>／全席個室</p>
+      <p class="meta">あんこう鍋・常陸牛など茨城の地のもの</p>
+      <p class="addr">ひたちなか市勝田中央5-1 平戸ビル1F</p>
+      <a class="book" href="https://www.hotpepper.jp/strJ000306940/" target="_blank" rel="noopener">ネット予約する</a>
+    </div>
+
+    <div class="bar">
+      <span class="tag">安さで選ぶなら</span>
+      <h3>かつたの高嶺</h3>
+      <p class="meta">駅から <b>徒歩5分</b>／17:00〜翌0:00・年中無休</p>
+      <p class="meta">備長炭のもつ焼きが1本109円均一。110席で入りやすい</p>
+      <p class="addr">ひたちなか市勝田中央7-10 ／ 029-219-9249</p>
+      <a class="book" href="https://www.hotpepper.jp/strJ001195348/" target="_blank" rel="noopener">ネット予約する</a>
+    </div>
+
+    <div class="bar">
+      <span class="tag">遅くまでやってる</span>
+      <h3>九州屋台 九太郎 勝田駅前店</h3>
+      <p class="meta">駅から <b>徒歩4分</b>／17:00〜翌2:00</p>
+      <p class="meta">もつ鍋・餃子の九州料理。屋台の雰囲気</p>
+      <p class="addr">ひたちなか市勝田中央7-7 1F ／ 050-5488-0325</p>
+      <a class="book" href="https://www.hotpepper.jp/strJ001225896/" target="_blank" rel="noopener">ネット予約する</a>
+    </div>
+
+    <div class="bar">
+      <span class="tag">迷ったらここ</span>
+      <h3>ミライザカ 勝田駅東口店</h3>
+      <p class="meta">東口 <b>徒歩3分</b>／土曜は15:00〜翌3:00</p>
+      <p class="meta">チェーンなので値段も勝手も読める。昼から開いてる唯一の店</p>
+      <p class="addr">ひたちなか市勝田中央7-7 コアビル2F</p>
+      <a class="book" href="https://www.hotpepper.jp/strJ001040322/" target="_blank" rel="noopener">ネット予約する</a>
+    </div>
+  </div>
+
+  <p class="warn" style="margin-top:18px"><b>予約について：</b>各リンクからホットペッパーで予約できます（予約はユウキ自身で確定してください）。フェス帰りは駅前が混むので、行くと決めているなら先に押さえておくのが安全です。</p>
 </section>
 
 <footer>
